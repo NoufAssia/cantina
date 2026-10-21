@@ -101,3 +101,6 @@ cantina/
 
 3. Lancer `index.html` dans un navigateur.
 
+## Demo
+
+https://cantina-three-xi.vercel.app/
