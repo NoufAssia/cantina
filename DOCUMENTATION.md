@@ -1,0 +1,54 @@
+# Cantina Documentation:
+
+## Tailwind css (classes)
+
+
+- flex: Activates Flexbox layout.
+- flex-col:	Arranges children vertically, in a column.
+- flex-row:	Arranges children horizontally, in a row.
+- grid:	Activates CSS Grid layout.
+- grid-cols-1: Creates one grid column.
+- grid-cols-2: Creates two equal grid columns.
+- grid-cols-4: Creates four equal grid columns.
+- items-center:	Aligns items to the center of the cross axis.
+- justify-center: Centers children along the main axis.
+- justify-between:	Places children at opposite ends, distributing free space between them.
+- gap-2: Adds a gap of 0.5rem (8px by default) between grid or flex children.
+- space-y-4: Adds vertical spacing between direct children.
+- block: Makes an element a block-level element.
+- w-full: Sets width to 100% of the containing block.
+- sm:grid-cols-2: At the sm breakpoint and above, use two columns.
+- lg:grid-cols-4: At the lg breakpoint and above, use four columns.
+- lg:flex-row: At the lg breakpoint and above, arrange flex children horizontally.
+- lg:flex-col: At the lg breakpoint and above, arrange flex children vertically.
+- lg:justify-between: At the lg breakpoint and above, distribute children between the ends.
+- lg:items-center: At the lg breakpoint and above, center items on the cross axis.
+- max-w-[1600px]: Sets the maximum width to 1600px.
+- w-14:	Sets width to 3.5rem = 56px.
+- h-14:	Sets height to 3.5rem = 56px.
+- w-full: Sets width to 100%.
+- grid-cols-[2fr_1fr]: Creates two grid columns in a 2:1 ratio.
+- p-5: Padding on all four sides: 20px.
+- px-6: Horizontal padding: 24px on the left and right.
+- py-5: Vertical padding: 20px on top and bottom.
+- pt-5: Top padding: 20px.
+- pb-2: Bottom padding: 8px.
+- mb-3: Bottom margin: 12px.
+- mt-2: Top margin: 8px.
+- font-['Inter',_sans-serif]: Sets the font family to Inter, with sans-serif as fallback.
+- font-bold: Makes text bold (font-weight: 700).
+- text-sm: Small text, normally 14px.
+- text-lg: Large text, normally 18px.
+- text-center: Centers text horizontally.
+- text-black: Sets text color to black.
+- text-[#601c00]: Sets text to the custom brown color #601c00
+- border: Adds a 1px border on all sides.
+- border-b: Adds a bottom border.
+- border-t: Adds a top border.
+- border-[#f9b332]: Sets the border color to gold.
+- rounded-2xl: Applies larger rounded corners, normally 16px.
+- shadow-sm: Adds a subtle shadow.
+- hover:bg-[#f9b332]: Changes the background to gold on hover.
+- hover:text-white: Changes the text to white on hover.
+- focus:ring-1: Applies a 1-unit focus ring when the element receives focus.
+- object-contain: Scales an image to fit inside its box without cropping it, preserving its aspect ratio.
