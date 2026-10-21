@@ -18,7 +18,7 @@
     </div>
 </header>
 <main class="max-w-[1600] px-6 py-4" id="index">
-    <section id="statistique" class="grid grid-cols-4 gap-4 mb-6 pb-6 border-b border-slate-200">
+    <section id="statistique" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 pb-6 border-b border-slate-200">
         <article class="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
             <h2 class="text-[#601c00] font-bold text-center pb-3">Recettes en réserve</h2>
             <p class="font-bold text-2xl text-center text-[#f9b332]">2</p>
@@ -36,6 +36,257 @@
             <p class="font-bold text-2xl text-center text-[#f9b332]">Équilibre</p>
         </article>
     </section>
+    <div class="grid  grid-col-1 lg:grid-cols-[2fr_1fr] gap-3">
+    <section id="planning" class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 ">
+        <div calss="mb-5">
+        <h2 class="mb-2 font-bold text-center text-3xl text-[#601c00]">Planning de la semaine</h2>
+        <p class="text-sm text-black mb-5 text-center font-bold">Composer le menu en respectant le budjet de 50 DH par jour.</p>
+        </div>
+        <div class="grid  grid-cols-1 lg:grid-cols-2 gap-9">
+            <article class="border border-slate-200 rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-bold text-center pb-4 text-[#601c00] border-b border-slate-200">Lundi</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Entrée</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Velouté">Velouté de légumes (5 DH)</option>
+                                <option value="soup">Soup de légumes (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Plat principal</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Tagine">Tajine de poulet (25 DH)</option>
+                                <option value="couscous">Couscous (15 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Dessert</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="fruit">Fruit de saison (10 DH)</option>
+                                <option value="Danino">Danino chockolat (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div class="border-t mt-4 border-slate-200 pb-2 ">
+                        <div class="flex flex-col items-center  lg:flex-row lg:justify-between lg:items-center mt-4">
+                            <span class="font-bold text-[#601c00]">Total Jour: </span>
+                            <span class="font-bold text-[#f9b332]">40 DH / 50 DH</span>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+            <article class="border border-slate-200 rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-bold text-center pb-4 text-[#601c00] border-b border-slate-200">Mardi</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Entrée</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Velouté">Velouté de légumes (5 DH)</option>
+                                <option value="soup">Soup de légumes (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Plat principal</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Tagine">Tajine de poulet (25 DH)</option>
+                                <option value="couscous">Couscous (15 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Dessert</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="fruit">Fruit de saison (10 DH)</option>
+                                <option value="Danino">Danino chockolat (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div class="border-t mt-4 border-slate-200 pb-2 ">
+                        <div class="flex flex-col items-center  lg:flex-row lg:justify-between lg:items-center mt-4">
+                            <span class="font-bold text-[#601c00]">Total Jour: </span>
+                            <span class="font-bold text-[#f9b332]">40 DH / 50 DH</span>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+            <article class="border border-slate-200 rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-bold text-center pb-4 text-[#601c00] border-b border-slate-200">Mercredi</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Entrée</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Velouté">Velouté de légumes (5 DH)</option>
+                                <option value="soup">Soup de légumes (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Plat principal</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Tagine">Tajine de poulet (25 DH)</option>
+                                <option value="couscous">Couscous (15 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Dessert</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="fruit">Fruit de saison (10 DH)</option>
+                                <option value="Danino">Danino chockolat (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div class="border-t mt-4 border-slate-200 pb-2 ">
+                        <div class="flex flex-col items-center  lg:flex-row lg:justify-between lg:items-center mt-4">
+                            <span class="font-bold text-[#601c00]">Total Jour: </span>
+                            <span class="font-bold text-[#f9b332]">40 DH / 50 DH</span>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+            <article class="border border-slate-200 rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-bold text-center pb-4 text-[#601c00] border-b border-slate-200">Jeudi</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Entrée</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Velouté">Velouté de légumes (5 DH)</option>
+                                <option value="soup">Soup de légumes (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Plat principal</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Tagine">Tajine de poulet (25 DH)</option>
+                                <option value="couscous">Couscous (15 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Dessert</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="fruit">Fruit de saison (10 DH)</option>
+                                <option value="Danino">Danino chockolat (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div class="border-t mt-4 border-slate-200 pb-2 ">
+                        <div class="flex flex-col items-center  lg:flex-row lg:justify-between lg:items-center mt-4">
+                            <span class="font-bold text-[#601c00]">Total Jour: </span>
+                            <span class="font-bold text-[#f9b332]">40 DH / 50 DH</span>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+            <article class="border border-slate-200 rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-bold text-center pb-4 text-[#601c00] border-b border-slate-200">Vendredi</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Entrée</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Velouté">Velouté de légumes (5 DH)</option>
+                                <option value="soup">Soup de légumes (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Plat principal</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="Tagine">Tajine de poulet (25 DH)</option>
+                                <option value="couscous">Couscous (15 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div>
+                        <label for="entree-lundi" class="block text-sm font-bold text-black mb-3 mt-2">Dessert</label>
+                        <div class="grid  grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-2">
+                            <select
+                            id="entree-lundi" name="entree-lundi" class="border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 focus:ring-1">
+                                <option value="">Séléctionner une entrée</option>
+                                <option value="fruit">Fruit de saison (10 DH)</option>
+                                <option value="Danino">Danino chockolat (5 DH)</option>
+                            </select>
+                            <button type="button" class="border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white" >En réserve</button>
+                        </div> 
+                    </div>
+                    <div class="border-t mt-4 border-slate-200 pb-2 ">
+                        <div class="flex flex-col items-center  lg:flex-row lg:justify-between lg:items-center mt-4">
+                            <span class="font-bold text-[#601c00]">Total Jour: </span>
+                            <span class="font-bold text-[#f9b332]">40 DH / 50 DH</span>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </section>
+    <section id=""></section>
+    </div>
 </main>
 <footer>
 
