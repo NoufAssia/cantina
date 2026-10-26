@@ -28,7 +28,7 @@ document.body.appendChild(formula);
 // create the formule 
 
 formula.innerHTML = `
-<div id="formule-recette-parent-div" class="  fixed inset-0 z-50 bg-black/50 p-4 flex items-center justify-center">
+<div id="formule-recette-parent-div" class=" hidden  fixed inset-0 z-50 bg-black/50 p-4 flex items-center justify-center">
 <div id="formula-content"class="w-full max-w-3xl rounded-xl bg-white p-6 shadow-xl">
  <div class="flex justify-between gap-4 items-center mt-4 mb-4">
     <h2 class="text-2xl font-bold">Ajouter une recette</h2>
@@ -97,3 +97,8 @@ const nameError = document.querySelector("#name-error");
 const categoryError = document.querySelector("#category-error");
 const prixError = document.querySelector("#prix-error");
 const badgeError = document.querySelector("#badge-error");
+
+const nameRegex = /^[\p{L}\p{N}][\p{L}\p{N} '\u2019-]{1,28}[\p{L}\p{N}]$/u;
+const prixRegex = /^(?: \d+(?:\.\d+)?)$/;
+
+
