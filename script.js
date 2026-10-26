@@ -23,3 +23,53 @@ const formula = document.createElement("div");
 formula.id = "formule";
 
 document.body.appendChild(formula);
+
+
+// create the formule 
+
+formula.innerHTML = `
+<div id="formule-recette-parent-div" class=" hidden fixed inset-0 z-50 bg-black/50 p-4 flex items-center justify-center">
+<div class="w-full max-w-3xl rounded-xl bg-white p-6 shadow-xl">
+ <div class="flex justify-between gap-4 items-center mt-4 mb-4">
+    <h2 class="text-2xl font-bold">Ajouter une recette</h2>
+    <button type="submit" class="rounded-2xl border-slate-300 px-3 py-1 text-2xl border hover:bg-slate-300 hover:text-white" >x</button>
+  </div>
+
+  <form id = "recette-form" class ="space-y-3" novalidate>
+    <div>
+        <label for ="recette-name" class="mb-1 block">Nom du plat</label>
+        <input id ="recette-name" name="recette-name" type="text" required class="w-full rounded-lg border p-2" placeholder="Ex: Couscous">
+    </div>
+    <div>
+    <label for ="recette-category" class="mb-1 block">Catégorie</label>
+    <select
+    id="recette-category" name="recette-category" required class="w-full rounded-lg border p-2">
+    <option value="">Choisir une catégorie</option>
+    <option value="Entrée">Entrée</option>
+    <option value="Plat principal">Plat peincipal</option>
+    <option value="Dessert">Dessert</option>
+    </select>
+    </div>
+    <div>
+    <label for ="recette-prix" class="mb-1 block">Prix</label>
+    <input id="recette-prix" name="recette-prix" type="text" required class="w-full rounded-lg border p-2" placeholder="Ex: 25">
+    </div>
+    <div>
+    <label for="recette-badge" class="mb-1 block">Badge</label>
+    <select
+        id ="recette-badge" name="recette-badge" required class="w-full rounded-lg border p-2">
+        <option value="">Choisir un badge</option>
+        <option value="Bio">Bio</option>
+        <option value="Végétarien">Végétarien</option>
+        <option value="Classique">Classique</option>
+    </select>
+    </div>
+    <div class="flex justify-end gap-3 pt-2">
+        <button id="annuler-recette" type="button" class="rounded-lg border border-[#f9b332]  text-[#f9b332] hover:bg-[#f9b332] hover:text-white px-4 py-2">Annuler</button>
+        <button id="submit-recette" type="submit" disabled class="rounded-lg px-4 py-2 text-white bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50 ">Ajouter</button>
+    </div>
+  </form>
+  </div>
+</div>
+`;
+
