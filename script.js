@@ -15,3 +15,11 @@ divRecette.className = "grid grid-cols-1";
 
 
 gardeSection.appendChild(divRecette);
+
+// create the div that will hold the formula 
+
+const formula = document.createElement("div");
+
+formula.id = "formule";
+
+document.body.appendChild(formula);
