@@ -102,3 +102,38 @@ const nameRegex = /^[\p{L}\p{N}][\p{L}\p{N} '\u2019-]{1,28}[\p{L}\p{N}]$/u;
 const prixRegex = /^(?: \d+(?:\.\d+)?)$/;
 
 
+function openModal()
+{
+    recetteModal.classList.remove("hidden");
+    nameInput.focus();
+}
+
+function clearErrorMsg()
+{
+    nameError.textContent = "";
+    categoryError.textContent = "";
+    prixError.textContent = "";
+    badgeError.textContent = "";
+}
+
+function closeModal()
+{
+    recetteModal.classList.add("hidden");
+    recetteFormula.reset();
+    clearErrorMsg();
+    submitButton.disabled = true;
+}
+
+formulaContent.addEventListener("click", function (event){
+    event.stopPropagation();
+});
+
+recetteModal.addEventListener("click", function(event){
+    if(event.target === recetteModal){
+        closeModal();
+    }
+});
+
+ajouterButton.addEventListener("click", openModal);
+closeButton.addEventListener("click", closeModal);
+anullerButton.addEventListener("click", closeModal);
