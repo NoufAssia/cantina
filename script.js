@@ -1,7 +1,6 @@
 //US-1 Ajouter + US-5 Rejex + US-7 StopPropagation
 
-
-// find the garde manager section where the recette will be added and find the ajouter button 
+// find the garde manager section where the recette will be added and find the ajouter button
 
 const gardeSection = document.querySelector("#Garde-manager");
 const ajouterButton = document.querySelector("#formula-button");
@@ -13,10 +12,9 @@ const divRecette = document.createElement("div");
 divRecette.id = "div-recette";
 divRecette.className = "grid grid-cols-1";
 
-
 gardeSection.appendChild(divRecette);
 
-// create the div that will hold the formula 
+// create the div that will hold the formula
 
 const formula = document.createElement("div");
 
@@ -24,8 +22,7 @@ formula.id = "formule";
 
 document.body.appendChild(formula);
 
-
-// create the formule 
+// create the formule
 
 formula.innerHTML = `
 <div id="formule-recette-parent-div" class=" hidden  fixed inset-0 z-50 bg-black/50 p-4 flex items-center justify-center">
@@ -70,15 +67,14 @@ formula.innerHTML = `
     </div>
     <div class="flex justify-end gap-3 pt-2">
         <button id="annuler-recette" type="button" class="rounded-lg border border-[#f9b332]  text-[#f9b332] hover:bg-[#f9b332] hover:text-white px-4 py-2">Annuler</button>
-        <button id="submit-recette" type="submit" disabled class="rounded-lg px-4 py-2 text-white bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50 ">Ajouter</button>
+        <button id="submit-recette" type="submit"  class="rounded-lg px-4 py-2 text-white bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50 ">Ajouter</button>
     </div>
   </form>
   </div>
 </div>
 `;
 
-const recetteModal = document.querySelector
-("#formule-recette-parent-div");
+const recetteModal = document.querySelector("#formule-recette-parent-div");
 
 const formulaContent = document.querySelector("#formula-content");
 
@@ -101,39 +97,119 @@ const badgeError = document.querySelector("#badge-error");
 const nameRegex = /^[\p{L}\p{N}][\p{L}\p{N} '\u2019-]{1,28}[\p{L}\p{N}]$/u;
 const prixRegex = /^(?: \d+(?:\.\d+)?)$/;
 
-
-function openModal()
-{
-    recetteModal.classList.remove("hidden");
-    nameInput.focus();
+function openModal() {
+  recetteModal.classList.remove("hidden");
+  nameInput.focus();
 }
 
-function clearErrorMsg()
-{
-    nameError.textContent = "";
-    categoryError.textContent = "";
-    prixError.textContent = "";
-    badgeError.textContent = "";
+function clearErrorMsg() {
+  nameError.textContent = "";
+  categoryError.textContent = "";
+  prixError.textContent = "";
+  badgeError.textContent = "";
 }
 
-function closeModal()
-{
-    recetteModal.classList.add("hidden");
-    recetteFormula.reset();
-    clearErrorMsg();
-    submitButton.disabled = true;
+function closeModal() {
+  recetteModal.classList.add("hidden");
+  recetteFormula.reset();
+  clearErrorMsg();
 }
 
-formulaContent.addEventListener("click", function (event){
-    event.stopPropagation();
+formulaContent.addEventListener("click", function (event) {
+  event.stopPropagation();
 });
 
-recetteModal.addEventListener("click", function(event){
-    if(event.target === recetteModal){
-        closeModal();
-    }
+recetteModal.addEventListener("click", function (event) {
+  if (event.target === recetteModal) {
+    closeModal();
+  }
 });
 
 ajouterButton.addEventListener("click", openModal);
 closeButton.addEventListener("click", closeModal);
 anullerButton.addEventListener("click", closeModal);
+
+// validate inputs by regex
+
+// stop the default behavior of submit and reate the recette article
+
+function afficherRecette(recette) {
+  const article = document.createElement("article");
+  article.className =
+    "flex justify-between rounded-xl border-slate-200 border shadow-sm bg-white p-4";
+
+  const divOne = document.createElement("div");
+
+  const divTwo = document.createElement("div");
+  divTwo.className = "flex items-end justify-end gap-3";
+
+  const title = document.createElement("h3");
+  title.className = "text-lg font-bold text-[#601c00]";
+  title.textContent = recette.name;
+
+  const category = document.createElement("p");
+  category.className = "mt-2 text-sm text-black";
+  category.textContent = "Categorie: " + recette.category;
+
+  const prix = document.createElement("p");
+  prix.className = "mt-2 text-sm text-black";
+  prix.textContent = "Prix: " + recette.prix + "DH";
+
+  const badge = document.createElement("p");
+  badge.className = "mt-2 text-sm text-black";
+  badge.textContent = recette.badge;
+
+  const modifier = document.createElement("button");
+  modifier.type = "button";
+  modifier.className =
+    " flex flex-end gap-3 border border-[#f9b332] rounded-2xl p-3 text-[#f9b332] shadow-sm border-2 hover:bg-[#f9b332] hover:text-white";
+  modifier.textContent = "Modifier";
+
+  const supprimer = document.createElement("button");
+  supprimer.type = "button";
+  supprimer.className =
+    "border border-[#601c00] rounded-2xl p-3 text-[#601c00] shadow-sm border-2 hover:bg-[#601c00] hover:text-white";
+  supprimer.textContent = "Supprimer";
+
+  divOne.append(title, category, prix, badge);
+
+  divTwo.append(modifier, supprimer);
+
+  article.append(divOne, divTwo);
+
+  divRecette.appendChild(article);
+}
+
+recetteFormula.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const name = nameInput.value.trim();
+  const categoryValue = categoryInput.value;
+  const prixValue = prixInput.value.trim();
+  const badgeValue = badgeInput.value;
+
+  const recette = {
+    name: name,
+    category: categoryValue,
+    prix: prixValue,
+    badge: badgeValue,
+  };
+
+  const recettes = JSON.parse(localStorage.getItem("recettes") || "[]");
+  recettes.push(recette);
+  localStorage.setItem("recettes", JSON.stringify(recettes));
+
+  afficherRecette(recette);
+
+  closeModal();
+});
+
+// use local storage to save the recettes articles
+
+const saveRecette = JSON.parse(
+    localStorage.getItem("recettes") || "[]"
+);
+
+saveRecette.forEach(function (recette){
+    afficherRecette(recette);
+});
