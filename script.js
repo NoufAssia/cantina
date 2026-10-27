@@ -29,7 +29,7 @@ formula.innerHTML = `
 <div id="formula-content"class="w-full max-w-3xl rounded-xl bg-white p-6 shadow-xl">
  <div class="flex justify-between gap-4 items-center mt-4 mb-4">
     <h2 class="text-2xl font-bold">Ajouter une recette</h2>
-    <button  id="close-button"type="submit" class="rounded-2xl border-slate-300 px-3 py-1 text-2xl border hover:bg-slate-300 hover:text-white" >x</button>
+    <button  id="close-button"type="button" class="rounded-2xl border-slate-300 px-3 py-1 text-2xl border hover:bg-slate-300 hover:text-white" >x</button>
   </div>
 
   <form id = "recette-form" class ="space-y-3" novalidate>
@@ -94,11 +94,13 @@ const categoryError = document.querySelector("#category-error");
 const prixError = document.querySelector("#prix-error");
 const badgeError = document.querySelector("#badge-error");
 
-const nameRegex = /^[\p{L}\p{N}][\p{L}\p{N} '\u2019-]{1,28}[\p{L}\p{N}]$/u;
-const prixRegex = /^(?: \d+(?:\.\d+)?)$/;
+const nameRegex = /^.{3,30}$/u;
+const prixRegex = /^\d+(?:\.\d+)?$/;
 
 function openModal() {
   recetteModal.classList.remove("hidden");
+  clearErrorMsg();
+  submitButton.disabled = true;
   nameInput.focus();
 }
 
@@ -130,6 +132,73 @@ closeButton.addEventListener("click", closeModal);
 anullerButton.addEventListener("click", closeModal);
 
 // validate inputs by regex
+
+function nameValidation() {
+  const name = nameInput.value.trim();
+  const validName = nameRegex.test(name);
+
+  if (name.length === 0) {
+    nameError.textContent = "Le nom du plat est obligatoire.";
+  } else if (!validName) {
+    nameError.textContent = "Le nom doit contenir entre 3 et 30 caractères.";
+  } else {
+    nameError.textContent = "";
+  }
+  return validName;
+}
+
+function categoryValidation() {
+  const validCategory = categoryInput.value !== "";
+
+  if (validCategory) {
+    categoryError.textContent = "";
+  } else {
+    categoryError.textContent = "Veuiller choisir une catégorie.";
+  }
+  return validCategory;
+}
+
+function prixValidation() {
+  const prix = prixInput.value.trim();
+  const validPrix = prixRegex.test(prix) && Number(prix) > 0;
+
+  if (prix === "") {
+    prixError.textContent = "Le prix est obligatoire.";
+  } else if (!validPrix) {
+    prixError.textContent = "Le prix doit être un nombre positif.";
+  } else {
+    prixError.textContent = "";
+  }
+  return validPrix;
+}
+
+function badgeValidation() {
+  const validBadge = badgeInput.value !== "";
+
+  if (validBadge) {
+    badgeError.textContent = "";
+  } else {
+    badgeError.textContent = "Veuiller choisir un badge.";
+  }
+  return validBadge;
+}
+
+function formValidation() {
+  const validName = nameValidation();
+  const validCategory = categoryValidation();
+  const validPrix = prixValidation();
+  const validBadge = badgeValidation();
+
+  const formValidation = validName && validCategory && validPrix && validBadge;
+  submitButton.disabled = !formValidation;
+  return formValidation;
+}
+
+nameInput.addEventListener("input", formValidation);
+categoryInput.addEventListener("change", formValidation);
+prixInput.addEventListener("input", formValidation);
+badgeInput.addEventListener("change", formValidation);
+
 
 // stop the default behavior of submit and reate the recette article
 
@@ -178,10 +247,23 @@ function afficherRecette(recette) {
   article.append(divOne, divTwo);
 
   divRecette.appendChild(article);
+
+  supprimer.addEventListener("click", function () {
+    const msgConfirm = confirm(
+      `Êtes-vous sûr de vouloir supprimer "${recette.name}"`,
+    );
+    if (msgConfirm === false) {
+      return;
+    } else article.remove();
+  });
 }
 
 recetteFormula.addEventListener("submit", function (event) {
   event.preventDefault();
+
+  if (!formValidation()) {
+    return;
+  }
 
   const name = nameInput.value.trim();
   const categoryValue = categoryInput.value;
@@ -195,21 +277,7 @@ recetteFormula.addEventListener("submit", function (event) {
     badge: badgeValue,
   };
 
-  const recettes = JSON.parse(localStorage.getItem("recettes") || "[]");
-  recettes.push(recette);
-  localStorage.setItem("recettes", JSON.stringify(recettes));
-
   afficherRecette(recette);
 
   closeModal();
-});
-
-// use local storage to save the recettes articles
-
-const saveRecette = JSON.parse(
-    localStorage.getItem("recettes") || "[]"
-);
-
-saveRecette.forEach(function (recette){
-    afficherRecette(recette);
 });
