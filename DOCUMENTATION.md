@@ -52,3 +52,79 @@
 - hover:text-white: Changes the text to white on hover.
 - focus:ring-1: Applies a 1-unit focus ring when the element receives focus.
 - object-contain: Scales an image to fit inside its box without cropping it, preserving its aspect ratio.
+
+
+## Js Dom manupilation
+
+### document.querySelector()
+- selects the first HTML element matching a CSS selector.
+
+### document.createElement()
+- creates a new HTML element in memory.
+
+### appendChild()
+- adds a node as the last child of another element.
+
+### append()
+- adds one or more nodes or text values as children od an element.
+
+### innerHTML
+- gets or sets the HTMLmarkup inside an element.
+
+### textContent
+- gets or cahnges the text inside an element.
+
+### className
+- sets or replaces an element's entire class attribute.
+
+### id
+- sets or reads an element's ID.
+
+### type
+- sets an HTML button's type.
+
+### classList.remove()
+- removes a CSS class.
+
+### classList.add()
+- adds a CSS class.
+
+### addEventListner()
+- regiters a function that runs when a specified vent occurs.
+
+### event.preventDefault()
+- prevents the browser's default action for an event.
+
+### event.stopPropagation()
+- stops an event from propagation to ancestor elements.
+
+### event.target
+- refrences the element on xhich the event originated.
+
+### .value
+- reads or sets the current value of an input or select element.
+
+### .trim()
+- removes whitespace from the beginning and end of a string.
+
+### .focus()
+- moves keyboard focus to an element.
+
+### .reset()
+- resets from controls to their initial values.
+
+### .disabled
+- a boolean property that determines whether a form control is disabled.
+
+### .remove()
+- removes an element from the DOM.
+
+### confirm()
+- displays a browser confirmation dialog and returns true or false.
+
+### regexExp.test()
+- checks whether a string matches a regular expression and returns a boolean.
+
+### Number()
+- converts a value to a number.
+
